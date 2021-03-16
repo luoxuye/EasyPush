@@ -17,17 +17,20 @@ print(bj_time)
 
 #PPTOKEN = ""
 PPTOKEN = os.environ["PPTOKEN"] #本地运行时直接填具体"参数".
-def pushplus(data):
+def pushplus():
+    pushdata = {
+        "title": f"推送的标题",
+        "content": f"  \n推送的内容\n  "+ bj_time,
+        "template":"markdown"
+    }
     if PPTOKEN != "":
-        return requests.post(f"http://www.pushplus.plus/send?token={PPTOKEN}", data=data)
+        return requests.post(f"http://www.pushplus.plus/send?token={PPTOKEN}", data=pushdata)
     else:
         return False
-
-pushplus({
-    "title": f"推送的标题",
-    "content": f"  \n推送的内容\n  "+ bj_time,
-    "template":"markdown"
-})
+    
+  
+if PPTOKEN:
+    pushplus()
 
 print("PPTOKEN = " + PPTOKEN)
 

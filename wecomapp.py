@@ -30,7 +30,7 @@ def access_token():
 access_token = access_token()
 
 def wecom():
-    data = {
+    pushdata = {
       "touser": WWUSERID,
       "toparty": "@all",
       "totag": "@all",
@@ -43,11 +43,11 @@ def wecom():
       "enable_id_trans": 0,
       "enable_duplicate_check": 0,
       "duplicate_check_interval": 1800
-  }
-  data = json.dumps(data)
+    }
+  pushdata = json.dumps(pushdata)
   
   url = "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=" + access_token
-  res = requests.post(url=url, data=data)
+  res = requests.post(url=url, data=pushdata)
   print(res.text)
   
 if WWID != "" and WWAPPSECRET != "" and WWAPPID != "":

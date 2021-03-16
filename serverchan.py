@@ -30,3 +30,4 @@ if SCKEY != "":
     severchan()
 
 print("SCKEY = " + SCKEY)
+print(bj_time)

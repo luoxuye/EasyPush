@@ -9,8 +9,8 @@
 # Github Actions说明
 ## 一、Fork此仓库
 ## 二、设置Secret
+###**Server酱的推送**  
 添加名为**SCKEY**的变量  
-**Server酱的KEY**  
 **SCKEY**  
 KEY获取方法详见官网：https://sc.ftqq.com
 

@@ -48,7 +48,7 @@ def wecom():
     
     pushdata = json.dumps(pushdata)
   
-    url = "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=" + access_token()
+    url = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access_token()}"
     res = requests.post(url=url, data=pushdata)
     print(res.text)
   

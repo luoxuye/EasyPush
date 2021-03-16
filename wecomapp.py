@@ -53,5 +53,7 @@ def wecom():
 if WWID != "" and WWAPPSECRET != "" and WWAPPID != "":
   wecom()
 
-
+print("\nWWID = " + WWID )
+print("\nWWAPPSECRET = " + WWAPPSECRET )
+print("\nWWAPPID = " + WWAPPID )
 

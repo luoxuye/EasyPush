@@ -1,6 +1,8 @@
 # Luo
 # Time: 2021-03-15 18:17:46
 
+
+# 打开EasyPush/.github/workflows/EasyPush.yml或者自己的****/.github/workflows/***.yml文件
 # 在env: 添加下面一行。
 #         env:
 #           SCKEY: ${{ secrets.SCKEY }}

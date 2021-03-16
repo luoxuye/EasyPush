@@ -1,5 +1,9 @@
 # EasyPush
 简单的推送方式集锦
+## 企业微信应用推送
+## pushplus推送
+## Server酱推送
+
 # 本地运行
 1.  下载code。
 2.  requirements.txt 是所需第三方模块，执行 `pip3 install -r requirements.txt` 安装模块。

@@ -17,18 +17,6 @@ if WWUSERID == "":
 utc_now = datetime.utcnow()
 bj_time = "  \n北京时间\n  " + str((utc_now + timedelta(hours=8)).strftime("%Y年%m月%d日%H时%M分%S秒"))
 
-
-
-
-
-def access_token():
-    url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?" + "corpid=" + WWID + "&corpsecret=" + WWAPPSECRET
-    response = requests.get(url).json()
-    access_token = response['access_token']
-    return access_token
-  
-
-
 def wecom():
     pushdata = {
       "touser": WWUSERID,
@@ -45,11 +33,14 @@ def wecom():
       "duplicate_check_interval": 1800
     }
     
-    
     pushdata = json.dumps(pushdata)
-  
-    url = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access_token()}"
-    res = requests.post(url=url, data=pushdata)
+    #get access_token
+    geturl = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?" + "corpid=" + WWID + "&corpsecret=" + WWAPPSECRET
+    response = requests.get(geturl).json()
+    access_token = response['access_token']
+    #push
+    posturl = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access_token}"
+    res = requests.post(url=posturl, data=pushdata)
     print(res.text)
   
 if WWID != "" and WWAPPSECRET != "" and WWAPPID != "":

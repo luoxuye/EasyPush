@@ -16,15 +16,17 @@ bj_time = "  \n北京时间\n  " + str((utc_now + timedelta(hours=8)).strftime("
 
 SCKEY = os.environ["SCKEY"] #本地运行时直接填具体"参数".
 
-def severchan(data):
-    if SCKEY != "":
-        return requests.post(f"https://sctapi.ftqq.com/{SCKEY}.send", data=data)
-    else:
-        return False
-
-severchan({
-  "text": f"推送标题",
-  "desp": "推送内容" + bj_time
-  })
+def severchan():
+    pushdata = {
+        "text": f"推送标题",
+        "desp": "推送内容" + bj_time
+    })
+    res = requests.post(f"https://sctapi.ftqq.com/{SCKEY}.send", data=pushdata)
+    print(res.text)
+    
+    
+    
+if SCKEY != "":
+    severchan()
 
 print("SCKEY = " + SCKEY)

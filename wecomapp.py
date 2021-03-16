@@ -6,10 +6,10 @@ import requests
 import json
 from datetime import datetime, timedelta
 
-WWID = os.environ["WWID"] #本地运行时直接填具体"参数".
-WWAPPSECRET = os.environ["WWAPPSECRET"] #本地运行时直接填具体"参数".
-WWAPPID = os.environ["WWAPPID"] #本地运行时直接填具体"参数".
-WWUSERID = os.environ["WWUSERID"] #本地运行时直接填具体"参数".选填
+WWID = "wwacec721843295593" #本地运行时直接填具体"参数".
+WWAPPSECRET = "z5mKAuRMRMzC863Bd3TV5HErln3sBZCUfW2GVg6I_DM" #本地运行时直接填具体"参数".
+WWAPPID = "1000002" #本地运行时直接填具体"参数".
+WWUSERID = "" #本地运行时直接填具体"参数".选填
 if WWUSERID == "":
     WWUSERID = "@all"
  

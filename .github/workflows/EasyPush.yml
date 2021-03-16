@@ -1,8 +1,8 @@
 name: "EasyPush"
 
 on:
-  schedule:
-    - cron: "0 16 * * *"  # scheduled at 00:00 (UTC+8) everyday
+  #schedule:
+  #  - cron: "* * * * *"  # scheduled at 00:00 (UTC+8) everyday
   workflow_dispatch:
 
 env:

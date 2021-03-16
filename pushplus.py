@@ -16,7 +16,7 @@ bj_time = "\n北京时间\n" + str((utc_now + timedelta(hours=8)).strftime("%Y�
 print(bj_time)
 
 #PPTOKEN = ""
-PPTOKEN = ""
+PPTOKEN = os.environ["PPTOKEN"] #本地运行时直接填具体"参数".
 def pushplus(data):
     if PPTOKEN != "":
         return requests.post(f"http://www.pushplus.plus/send?token={PPTOKEN}", data=data)
@@ -24,11 +24,12 @@ def pushplus(data):
         return False
 
 pushplus({
-    "title": "推送的标题",
-    "content": "  \n推送的内容\n  "+ bj_time,
+    "title": f"推送的标题",
+    "content": f"  \n推送的内容\n  "+ bj_time,
     "template":"markdown"
 })
 
+print("PPTOKEN = " + PPTOKEN)
 
 
 

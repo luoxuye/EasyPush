@@ -44,11 +44,13 @@ def wecom():
       "enable_duplicate_check": 0,
       "duplicate_check_interval": 1800
     }
-  pushdata = json.dumps(pushdata)
+    
+    
+    pushdata = json.dumps(pushdata)
   
-  url = "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=" + access_token
-  res = requests.post(url=url, data=pushdata)
-  print(res.text)
+    url = "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=" + access_token
+    res = requests.post(url=url, data=pushdata)
+    print(res.text)
   
 if WWID != "" and WWAPPSECRET != "" and WWAPPID != "":
   wecom()

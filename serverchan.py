@@ -27,4 +27,4 @@ severchan({
   "desp": "推送内容" + bj_time
   })
 
-print(SCKEY)
+print("SCKEY = " + SCKEY)

@@ -32,6 +32,10 @@ jobs:
 
       - name: Run sign
         env:
+          WWAPPSECRET: ${{ secrets.WWAPPSECRET }}
+          WWAPPID: ${{ secrets.WWAPPID }}
+          WWID: ${{ secrets.WWAPPID }}
+          WWUSERID: ${{ secrets.WWUSERID }}
           SCKEY: ${{ secrets.SCKEY }}
           PPTOKEN: ${{ secrets.PPTOKEN }}
 

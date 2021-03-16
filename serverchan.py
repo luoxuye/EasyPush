@@ -20,7 +20,7 @@ def severchan():
     pushdata = {
         "text": f"推送标题",
         "desp": "推送内容" + bj_time
-    })
+    }
     res = requests.post(f"https://sctapi.ftqq.com/{SCKEY}.send", data=pushdata)
     print(res.text)
     

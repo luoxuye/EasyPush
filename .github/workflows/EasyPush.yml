@@ -51,6 +51,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install -r requirements.txt
           
+          python3 wecomapp.py
           python3 pushplus.py
           python3 serverchan.py
           python3 beijingtime.py

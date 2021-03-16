@@ -37,9 +37,9 @@ def wecom():
     #get access_token
     geturl = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?" + "corpid=" + WWID + "&corpsecret=" + WWAPPSECRET
     response = requests.get(geturl).json()
-    access_token = response['access_token']
+    token = response['access_token']
     #push
-    posturl = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access_token}"
+    posturl = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={token}"
     res = requests.post(url=posturl, data=pushdata)
     print(res.text)
   
